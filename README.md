@@ -33,11 +33,11 @@ The Weather App is a simple and user-friendly application that provides weather 
 2. Open the project in Android Studio.
 
 3. Add your API key:
-   - Locate the file where API keys are stored (e.g., `local.properties` or a specific constants file).
+   - Locate the file Constant where API keys are stored 
    - Add your weather API key.
 
    ```properties
-   WEATHER_API_KEY=your_api_key_here
+   const val apikey=your_api_key_here
    ```
 
 4. Build and run the app on an emulator or physical device.
