@@ -55,7 +55,3 @@ The Weather App is a simple and user-friendly application that provides weather 
 6. Open a pull request.
 
 
-## Acknowledgments
-- Weather API used for providing weather data.
-- Jetpack Compose for the UI components.
-- Open source libraries and tools.
