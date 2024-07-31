@@ -145,14 +145,14 @@ fun SuccessData(data: WeatherModel) {
                     "Humidity",
                     data.current.humidity,
                     "Wind Speed",
-                    data.current.wind_kph
+                    data.current.wind_kph+"kph"
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 RowCmp(
                     "Feels Like",
-                    data.current.feelslike_c,
+                    data.current.feelslike_c+"°c",
                     "Precipitation",
-                    data.current.precip_mm
+                    data.current.precip_mm+"mm"
                 )
             }
         }
