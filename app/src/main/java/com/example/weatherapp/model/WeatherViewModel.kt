@@ -1,5 +1,7 @@
 package com.example.weatherapp.model
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +16,14 @@ class WeatherViewModel : ViewModel() {
     private val _weatherResult = MutableLiveData<NetworkResponse<WeatherModel>>()
     val weatherResult: LiveData<NetworkResponse<WeatherModel>> = _weatherResult
 
+    private val _city= mutableStateOf("")
+    val city: State<String> =_city
+
+
+
+    fun updateCity(newCity:String){
+        _city.value=newCity
+    }
     fun getData(city: String) {
         _weatherResult.value = NetworkResponse.Loading
         viewModelScope.launch {

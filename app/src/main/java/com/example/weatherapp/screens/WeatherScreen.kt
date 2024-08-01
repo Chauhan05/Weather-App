@@ -43,9 +43,9 @@ import com.example.weatherapp.model.WeatherViewModel
 
 @Composable
 fun WeatherScreen(viewModel: WeatherViewModel, modifier: Modifier = Modifier) {
-    var city by remember {
-        mutableStateOf("")
-    }
+//    var city by remember {
+//        mutableStateOf("")
+//    }
 
     val weatherResult = viewModel.weatherResult.observeAsState()
     val focusManager = LocalFocusManager.current
@@ -64,9 +64,9 @@ fun WeatherScreen(viewModel: WeatherViewModel, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             OutlinedTextField(
-                value = city,
+                value = viewModel.city.value,
                 onValueChange = {
-                    city = it
+                    viewModel.updateCity(it)
                 },
                 label = {
                     Text(text = "Location")
@@ -74,7 +74,7 @@ fun WeatherScreen(viewModel: WeatherViewModel, modifier: Modifier = Modifier) {
                 modifier = Modifier.weight(1f),
             )
             IconButton(onClick = {
-                viewModel.getData(city)
+                viewModel.getData(viewModel.city.value)
                 focusManager.clearFocus()
                 hideKeyboard(context)
             }) {
